@@ -1,0 +1,156 @@
+package test.vala;
+
+enum Enum
+{
+    ONE = 1;
+    TWO = 2;
+    THREE = 3;
+}
+
+message Message
+{
+    required int32 value_int32 = 1;
+    required uint32 value_uint32 = 2;
+    required sint32 value_sint32 = 3;
+    required fixed32 value_fixed32 = 4;
+    required sfixed32 value_sfixed32 = 5;
+    required int64 value_int64 = 6;
+    required uint64 value_uint64 = 7;
+    required sint64 value_sint64 = 8;
+    required fixed64 value_fixed64 = 9;
+    required sfixed64 value_sfixed64 = 10;
+    required bool value_bool = 11;
+    required Enum value_enum = 12;
+    required string value_string = 13;
+    required bytes value_bytes = 14;
+    required double value_double = 15;
+    required float value_float = 16;
+}
+
+message RequiredMessage
+{
+    required sint32 int_value = 1;
+    required string string_value = 2;
+}
+
+message OptionalMessage
+{
+    optional sint32 int_value = 1;
+    optional string string_value = 2;
+}
+
+message OptionalDefaultsMessage
+{
+    optional sint32 int_value = 1 [default = 1];
+    optional string string_value = 2 [default = "TEST"];
+}
+
+message RepeatedMessage
+{
+    repeated uint32 value = 1;
+}
+
+message RepeatedPackedMessage
+{
+    repeated uint32 value = 1 [packed = true];
+}
+
+message EnumMessage
+{
+    required Enum enum_value = 1;
+    optional Enum enum_value_o = 2;
+    optional Enum enum_value_od = 3 [default = TWO];
+    repeated Enum enum_value_r = 4;
+}
+
+message ReservedMessage
+{
+    required uint32 abstract = 1;
+    required uint32 as = 2;
+    required uint32 async = 3;
+    required uint32 base = 4;
+    required uint32 break = 5;
+    required uint32 case = 6;
+    required uint32 catch = 7;
+    required uint32 class = 8;
+    required uint32 const = 9;
+    required uint32 construct = 10;
+    required uint32 continue = 11;
+    required uint32 default = 12;
+    required uint32 delegate = 13;
+    required uint32 delete = 14;
+    required uint32 do = 15;
+    required uint32 dynamic = 16;
+    required uint32 else = 17;
+    required uint32 enum = 18;
+    required uint32 ensures = 19;
+    required uint32 errordomain = 20;
+    required uint32 extern = 21;
+    required uint32 false = 22;
+    required uint32 finally = 23;
+    required uint32 for = 24;
+    required uint32 foreach = 25;
+    required uint32 get = 26;
+    required uint32 global = 27;
+    required uint32 if = 28;
+    required uint32 in = 29;
+    required uint32 inline = 30;
+    required uint32 interface = 31;
+    required uint32 internal = 32;
+    required uint32 is = 33;
+    required uint32 lock = 34;
+    required uint32 namespace = 35;
+    required uint32 new = 36;
+    required uint32 null = 37;
+    required uint32 out = 38;
+    required uint32 owned = 39;
+    required uint32 override = 40;
+    required uint32 public = 41;
+    required uint32 private = 42;
+    required uint32 protected = 43;
+    required uint32 ref = 44;
+    required uint32 requires = 45;
+    required uint32 return = 46;
+    required uint32 set = 47;
+    required uint32 signal = 48;
+    required uint32 sizeof = 49;
+    required uint32 static = 50;
+    required uint32 struct = 51;
+    required uint32 switch = 52;
+    required uint32 this = 53;
+    required uint32 throw = 54;
+    required uint32 throws = 55;
+    required uint32 true = 56;
+    required uint32 try = 57;
+    required uint32 typeof = 58;
+    required uint32 unowned = 59;
+    required uint32 using = 60;
+    required uint32 value = 61;
+    required uint32 var = 62;
+    required uint32 void = 63;
+    required uint32 virtual = 64;
+    required uint32 weak = 65;
+    required uint32 while = 66;
+    required uint32 yield = 67;
+}
+
+message RequiredNestedMessage
+{
+    required ChildMessage child = 1;
+}
+
+message OptionalNestedMessage
+{
+    optional ChildMessage child = 1;
+}
+
+message RepeatedNestedMessage
+{
+    repeated ChildMessage children = 1;
+}
+
+message ChildMessage
+{
+    required uint32 value = 1;
+}
+

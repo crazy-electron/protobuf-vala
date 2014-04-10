@@ -1,0 +1,50 @@
+Overview of changed in protobuf-vala 0.1.0
+
+  * Allow fields that use keywords for names
+  * Reset fields when decoding
+  * Allow decoding from existing buffers
+  * Keep unknown fields
+
+Overview of changed in protobuf-vala 0.0.7
+
+  * Use the existing protoc text format for to_string()
+  * Correctly implement enum defaults
+  * Messages now extend Protobuf.Message
+  * Make data length optional when decoding
+  * Return success on decode methods
+  * Fix encoding of fixed width 32 and 64 bit types
+
+Overview of changed in protobuf-vala 0.0.6
+
+  * Fix crash in encode test
+  * Correctly indent to_string method output
+  * Support packed repeated fields
+
+Overview of changed in protobuf-vala 0.0.5
+
+  * Handle buffer over/underflows
+  * Check if required fields are present
+  * Fix crash in decode test
+  * Fix build from unnecessarily calling valac
+
+Overview of changed in protobuf-vala 0.0.4
+
+  * Auto-resize encode buffer
+  * Rename to protobuf-vala
+  * Stop distributing generated C code
+
+Overview of changed in protoc-gen-vala 0.0.3
+
+  * Fix sint64 encoding on 32 bit systems
+
+Overview of changed in protoc-gen-vala 0.0.2
+
+  * Support all basic data types
+  * Create libprotobuf-vala library
+  * Use classes for encode and decode buffers
+  * Record version in generated files
+  * Add regression tests
+
+Overview of changed in protoc-gen-vala 0.0.1
+
+  * Initial release
