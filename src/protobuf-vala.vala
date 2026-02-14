@@ -1,10 +1,10 @@
-namespace Google.Protobuf
+namespace Protobuf
 {
     public abstract class Message
     {
         protected List<UnknownField> unknown_fields;
-        public abstract size_t encode (Google.Protobuf.EncodeBuffer buffer);
-        public abstract bool decode (Google.Protobuf.DecodeBuffer buffer, ssize_t data_length = -1);
+        public abstract size_t encode (Protobuf.EncodeBuffer buffer);
+        public abstract bool decode (Protobuf.DecodeBuffer buffer, ssize_t data_length = -1);
         public abstract string to_string (string indent = "");
     }
 
@@ -158,7 +158,12 @@ namespace Google.Protobuf
                 data[i] = buffer[read_index + i];
             read_index += length;
     
-            return new ByteArray.take (data);
+            // return new ByteArray.take (data);
+
+            var byte_array = new ByteArray ();
+            byte_array.append (data);
+            return byte_array;
+                       
         }
     
         public uint32 decode_uint32 ()

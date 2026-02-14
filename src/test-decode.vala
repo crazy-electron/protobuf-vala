@@ -1,4 +1,4 @@
-using Google.Protobuf;
+using Protobuf;
 
 private int n_tests = 0;
 private int n_passed = 0;

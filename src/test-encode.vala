@@ -1,4 +1,4 @@
-using Google.Protobuf;
+using Protobuf;
 
 private int n_tests = 0;
 private int n_passed = 0;
@@ -292,7 +292,8 @@ private void check_encode_string (string value, string expected)
 
 private void check_encode_bytes (string value, string expected)
 {
-    var v = new ByteArray.take (string_to_array (value));
+    var v = new ByteArray ();
+    v.append (string_to_array (value));    
 
     var buffer = new EncodeBuffer ();
     buffer.encode_bytes (v);
@@ -395,7 +396,8 @@ private void check_buffer_resize (size_t value_length, size_t buffer_length)
     var value = "";
     for (var i = 0; i < value_length; i++)
         value += "FF";
-    var v = new ByteArray.take (string_to_array (value));
+    var v = new ByteArray ();
+    v.append (string_to_array (value));        
     buffer.encode_bytes (v);
     var result = buffer_to_string (buffer);
 
@@ -422,7 +424,8 @@ private void check_encode_message (string expected)
     value.value_bool = true;
     value.value_enum = Test.Vala.Enum.ONE;
     value.value_string = "TEST";
-    value.value_bytes = new ByteArray.take (string_to_array ("BEEF"));
+    value.value_bytes = new ByteArray ();
+    value.value_bytes.append (string_to_array ("BEEF"));        
     value.value_double = 1.0d;
     value.value_float = 1.0f;
 
